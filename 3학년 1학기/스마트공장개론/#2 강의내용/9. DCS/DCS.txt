@@ -1,0 +1,103 @@
+DCS
+
+DDC - Direct Digital Controler (집중 제어 방식) 1960~70
+한대의 컴퓨터가 플랜트 정체를 감시, 조작, 제어
+중앙 집중형 방식
+
+DCS - Distributed Control System (분산 제어 시스템) 1975~
+하나의 중앙처리 장치를 여러 개의 작은 중앙처리 장치로 나누어 기능별로 분리하고 이를 네트워크로 연결시켜 전체 시스템을 구성
+분산형 관리
+
+
+DCS의 특징 - 기능의 분산과 정보의 집중
+1. Process 제어전용시스템으로 안정적이며 신뢰성 있는 시스템
+2. 편리한 플랜트 운전을 위하여 각종 표준화면이 준비되어있음.
+3. 표준화된 하드웨어 및 모듈화된 소프트웨어를 쉽게 시스템구성이 가능
+4. 복잡한 아날로그 제어 위주의 플랜트제어에 적합
+5. 전문지식이 없는 운전자라도 기초 교육만으로 시스템의 유지 보수를 할 수 있고 간단한 프로그램 수정이 가능
+
+Distributed Operate Console : DOC
+
+
+DCS의 주요기능
+Trend Graph Alarm  신호 등 전공정의 MMI기능
+각종 Data의 Report, Message 등의 출력기능
+단순한 Sequence 기능 및 아날로그 데이터의 Feedback 기능
+Network 및 System 이중화 기능
+
+
+DCS의 구성요소
+System Interface
+Process Interface
+Operator Interface
+
+
+System Interface
+ -Cpu
+  제어대상인 플랜트의 프로세스 상황에 따라 다르나 32bit 사용
+  제어대상은 실시간에 변화하므로 엄격한 실시간 처리가 요구됨
+ -Data Highway
+  광 게이블이나 동축 케이블로 통신선로를 연결한 LAN의 하나이며 전송 거리는 보통 수 Km임
+  분산제어 시스템의 유리한 집중화 부분으로서 정보교환을 고속으로 하고 응답성도 좋아야 함
+
+Process Interface
+ -제어 대상과 직결해서 제어정보의 처리를 행하기 위한 컴퓨터의 입출력을 말하며 Analog입력 및 출력, Digital 입력 및 출력 등이 있음.
+ -24시간 연속 운전되는 공업시스템에 사용되어 기계설비의 제어나 감시를 행하기 때문에 선뢰성이 좋고 확장성이 좋아야 함.
+
+Operator Interface
+ -운영자가 필요에 따라서 제어대상을 제어하기도 하고 공정 상태를 감시하기 위해서 준비된 조작스위치 및 상태표시 장치를 총칭하여 말함
+ -최근에는 MMI기능을 강화하여 운영자의 부담을 경감하고, 고도의 상황판단 능력을 가지는 방향으로 발전됨
+
+
+DCS의 적용분야
+철강분야 : 수처리 및 가열로, 고로의 온도, 습도 입력제어
+석유화학 : 석유비축기지의 자동출하시스템 제어
+환경분야 : 소각로시스템 제어
+
+
+
+프로세스 컨트롤
+제어 : 제어는 설비/공정을 목적하는 바를 이루기 위해서 다양한 계산 로직을 이용해서 작업이 이루어지도록 하는 것
+
+제어의 종류
+피드백 제어, 피드 포어드 제어, 캐스케이드 제어, 비율제어
+
+
+공정 파라메타
+
+설비/공정 제어는 공정 파라메나의 제어를 통해서 이루어짐
+공정 파라메타에는 Process Value, Set Value, Control Value 가 있음
+Process Value: 공정의 현상을 모니터링 하기 위한 공정 파라메타
+Set Value: 공정에서 목적하는 바를 이루기 위해서 제어하기 위한 목적 값
+Control Value: Process Value가 Set Value를 유지하게 하기 위해서 설비/공정에 가해지는 제어값
+
+설비/공정의 제어에는 컨트롤러에 각각의 제어계에 해당하는 현장의 TAG들이 있고 TAG 들은 목적에 따라서 Process Value와 Set Value를 구성함
+공정 모니터링 목적: Process Value
+공정 제어를 위한 목적: Process Value, Set Value
+
+
+MES관점에서 공정 파라메타의 선정
+MES와 설비/공정제어 시스템은 그 기능의 영역이 다름
+
+MES관점에 있어서는 관리의 수준을 어느 정도로 할 것인가를 결정
+
+프로세스 모니터링을 하기 위해서는 필요한 설비/공정의 Process Value 선정/관리
+
+Set Value의 변경에 대한 관리를 하기 위해서는 Set Value도 관리 방법을 정해서 선정/관리함
+
+Process Value 는 공정계와 Control Value에 의해서 공정의 현상을 나타내기 때문에 Process Value와 Control Value 의 연관성을 이용한 다양한 응용이 필요한 경우에는 Control Value 도 선정/관리함
+
+
+공정 파라메타 선정을 통해서 선정된 파라메타 리스트를 중심으로 해당되는 파라메타가 PLC에서 관리되고 있는지 PLC의 I/O List, Calculation value list 에서 조사
+
+잘 정리되어 관리되고 있는 PLC의 I/O List, Calculation value list를 통해서 공정에서 필요로 하는 파라메타를 선정
+PLC의 I/O list, Calculation value list, 를 이용할 수 없을 경우, PLC의 I/O Address map과 PLC 프로그램 분석을 통해 리스트를 만들고 그 리스트를 이용해서 공정에서 필요로 하는 파라메타를 선정함
+
+
+공정 파라메타 데이터의 수집 유형
+Discrete공정 설비 : 일반적인 제조 설비, 설비에서 Material 을 가공하는 단위에 따른 주기성을 갖는 Cycle 특성 데이터
+Continuous 공정 설비 : 화학공장, 대체적으로 연속적인 시계열적 특성 데이터
+
+이들 특성에 따라서 데이터의 수집방법, 수집형태, 관리방법 등을 달리하는 것이 바람직함
+
+공정데이터 활용: 공정 모니터링, Trend history 분석, 간단한 통계 분석, SPC/rt-SPC, FDC

@@ -1,0 +1,517 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+.main-top {
+    display: block;
+    position: relative;
+    height: 370px;
+    background: #000;
+    overflow: hidden;
+}
+
+.main-top > img {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    margin-left: -960px;
+    display: block;
+    width: 1920px;
+    height: 370px;
+}
+.top-bar {
+    align-items: center;
+    margin-right: auto;
+    margin-left: auto;
+    float: left;
+    background-color: #fd7e14;
+    position: absolute;
+    top: 2.375rem;
+    display: block;
+    height: 6.375rem;
+    min-width: 1200px;
+    width: 100%;
+    padding: 0 20px;
+    flex-wrap: wrap;
+}
+
+.top-logo {
+    display: inherit;
+    margin-left: 54.5px;
+    padding-left: 20px;
+    background-color: #fd7e14;
+    width: 90%;
+    height : 94px;
+}
+
+.logo {
+    float: left;
+    position: relative;
+    top: 35px;
+}
+
+.name{
+    position: relative;
+    top: 40px;
+    left: 20px;
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: #fff;
+    font-family: "Noto Sans KR" , sans-serif;
+}
+
+.head {
+    align-items: center;
+    margin-right: auto;
+    margin-left: auto;
+    float: left;
+    position: absolute;
+    display: block;
+    height: 6.375rem;
+    min-width: 1200px;
+    width: 100%;
+    padding: 0 20px;
+    flex-wrap: wrap;
+}
+
+.top-menu {
+    display: inherit;
+    position: absolute;
+    right: 100px;
+    padding: 0 100px;
+}
+
+.head > .top-menu > ul{
+    padding: 15px;
+    list-style: none;
+    font-size :smaller;
+    color: #fff;
+    font-family: "Noto Sans KR" , sans-serif;
+}
+
+.head > .top-menu > ul > li {
+    border : 0;
+    float: left;
+    border-right: 2px solid white;
+}
+
+.head > .top-menu > ul > li:last-child{
+    border: none;
+}
+
+.menu {
+    display: inline-block;
+    position: absolute;
+    right: 100px;
+    padding: 0 100px;
+}
+
+.top-bar > .top-logo > .menu > ul {
+    padding: 10px;
+    list-style: none;
+    font-size :smaller;
+    color: #fff;
+    font-family: "Noto Sans KR" , sans-serif;
+}
+
+.top-bar > .top-logo > .menu > ul > li {
+    list-style-type: none;
+    display: inline-block;
+    border: 1px solid white;
+}
+
+.top-bar > .top-logo > .menu > ul > .but1{
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+}
+
+.top-bar > .top-logo > .menu > ul > .but2{
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+}
+
+a{
+    display : block;
+    padding : 10px;
+}
+
+.top-bar > .top-logo > .menu > ul > li > a:hover{
+    color : yellow;
+}
+
+a > .hidden{
+    display:none;
+}
+
+a:hover > .hidden{
+    display:block;
+    position: absolute;
+    right: 250px;
+    padding: 0 100px;
+}
+
+.hidden > ul{
+    padding: 10px;
+    list-style: none;
+    font-size :smaller;
+    color: #fff;
+    font-family: "Noto Sans KR" , sans-serif;
+}
+
+.hidden > ul > li {
+    border : 0;
+    list-style-type: none;
+    display: inline-block;
+    background-color: #17a2b8;
+}
+
+b {
+    display : block;
+    padding : 10px;
+}
+
+b:hover{
+    color : red;
+}
+
+.middle-bar{
+    align-items: center;
+    margin-right: auto;
+    margin-left: auto;
+    float: left;
+    position: absolute;
+    bottom: 0rem;
+    display: block;
+    height: 2.5rem;
+    min-width: 1200px;
+    width: 100%;
+    padding: 10px 0px 0px 20px;
+    flex-wrap: wrap;
+    background-color: #333;
+    color: #fff;
+    font-family: "Noto Sans KR" , sans-serif;
+}
+
+.main-middle{
+    display: block;
+    position: absolute;
+    height: 55%;
+    width: 100%;
+    overflow: hidden;
+}
+
+.main-list{
+    display: block;
+    float: left;
+    position: absolute;
+    width : 300px;
+    height: 100%;
+    padding-top: 50px;
+    padding-left:150px;
+    padding-right:150px;
+}
+
+.main-list-name{
+    display: block;
+    float: left;
+    background-color: white;
+    width : 80%;
+    height: 30px;
+    font-size: 1.625rem;
+    font-weight: 800;
+    color: black;
+    font-family: "Noto Sans KR" , sans-serif;
+    border: 1px solid black;
+    text-align:center;
+    padding: 30px 0px;
+}
+
+.main-list-menu{
+    display: inline-block;
+    text-align: center;
+    width : 80%;
+}
+
+.main-list-menu > ul{
+    list-style: none;
+    color: black;
+    font-family: "Noto Sans KR" , sans-serif;
+}
+
+.main-list-menu > ul > li{
+    width: 100%;
+    height: 40px;
+    list-style-type: none;
+    display: inline-block;
+    font-weight: 400;
+    border: 1px solid black;
+    font-family: "Noto Sans KR" , sans-serif;
+}
+
+c:hover{
+    background-color: #fd7e14;
+    color : white;
+    box-shadow: 5px 5px black; 
+}
+
+.main-screen {   
+    padding-top: 50px;
+    padding-bottom: 50px;
+    padding-left: 450px;
+    display: block;
+    width: 60%;
+    height: auto;
+    position: absolute;
+}
+
+.main-name {
+    display: block;
+    width: 100%;
+    height: auto;
+    float :left;
+    font-weight: 700;
+    font-size: 1.813rem;
+    color: #2c2c2c;
+    font-family: "Noto Sans KR" , sans-serif;
+}
+
+.main-sub-name{
+    display: block;
+    position: relative;
+    top : 10px;
+    width: 100%;
+    height: auto;
+    float :left;
+    font-weight: 500;
+    font-size: 2rem;
+    color: black;
+    font-family: "Noto Sans KR" , sans-serif;
+}
+
+.main-bottom{
+    display: block;
+    position: relative; 
+    width: 100%;
+    height: auto;
+    white-space: pre-line;
+    padding-top: 20px;
+    margin-bottom: 20px;
+    font-size: 22px;
+    line-height: 30px;
+    color: #333333;
+    font-family: "Noto Sans KR" , sans-serif;
+}
+
+.middle-bar{
+    align-items: center;
+    margin-right: auto;
+    margin-left: auto;
+    float: left;
+    position: absolute;
+    bottom: 0rem;
+    display: block;
+    height: 2.5rem;
+    min-width: 1200px;
+    width: 100%;
+    padding: 10px 0px 0px 20px;
+    flex-wrap: wrap;
+    background-color: #333;
+    color: #fff;
+    font-family: "Noto Sans KR" , sans-serif;
+}
+
+.main-middle{
+    position: absolute;
+    overflow: initial;
+}
+
+.main-list{
+    display: block;
+    float: left;
+    position: absolute;
+    width : 300px;
+    height: 100%;
+    padding-top: 50px;
+    padding-left:150px;
+    padding-right:150px;
+}
+
+.main-list-name{
+    display: block;
+    float: left;
+    background-color: white;
+    width : 80%;
+    height: 30px;
+    font-size: 1.625rem;
+    font-weight: 800;
+    color: black;
+    font-family: "Noto Sans KR" , sans-serif;
+    border: 1px solid black;
+    text-align:center;
+    padding: 30px 0px;
+}
+
+.main-list-menu{
+    display: inline-block;
+    text-align: center;
+    width : 80%;
+}
+
+.main-list-menu > ul{
+    list-style: none;
+    color: black;
+    font-family: "Noto Sans KR" , sans-serif;
+}
+
+.main-list-menu > ul > li{
+    width: 100%;
+    height: 40px;
+    list-style-type: none;
+    display: inline-block;
+    font-weight: 400;
+    border: 1px solid black;
+    font-family: "Noto Sans KR" , sans-serif;
+}
+
+.main-list-menu > ul > li:hover{
+    background-color: #fd7e14;
+    color : white;
+    box-shadow: 5px 5px black;
+}
+
+.main-name {
+    display: block;
+    width: 100%;
+    height: auto;
+    float:left;
+    font-weight: 700;
+    font-size: 1.813rem;
+    color: #2c2c2c;
+    font-family: "Noto Sans KR" , sans-serif;
+}
+
+.main-sub-name{
+    display: block;
+    position: relative;
+    top : 20px;
+    width: 100%;
+    height: auto;
+    float :left;
+    font-weight: 500;
+    font-size: 2rem;
+    color: black;
+    font-family: "Noto Sans KR" , sans-serif;
+}
+
+.main-bottom{
+    display: block;
+    position: relative; 
+    width: 100%;
+    height: auto;
+    white-space: pre-line;
+    padding-top: 5px;
+    margin-bottom: 20px;
+    font-size: 22px;
+    line-height: 30px;
+    color: #333333;
+    font-family: "Noto Sans KR" , sans-serif;
+}
+
+.sub-name{
+    display:block;
+    position: relative; 
+    top: 30px;
+    color: #333333;
+    font-size: 22px;
+    line-height: 26px;
+    font-weight: 600;
+    font-family: "Noto Sans KR" , sans-serif;
+}
+
+.sub1{
+    display: block;
+    position: relative; 
+    white-space: pre-line;
+    top: 10px;
+    width: 100%;
+    height: auto;
+    color: #666666;
+    font-size: 16px;
+    line-height: 26px;
+    font-weight: 300;
+    font-family: "Noto Sans KR" , sans-serif;
+}
+
+.sub1-list{
+    display: block;
+    position: relative; 
+    width: 100%;
+    height: auto;
+    top: 30px;
+}
+.sub1-list > ul{
+    list-style: none;
+    color: #999999;
+    font-size: 16px;
+    font-weight: 300;
+    padding-left: 20px;
+    font-family: "Noto Sans KR" , sans-serif;
+    list-style-type: disc;
+}
+
+.main-page-bottom{
+    position: absolute;
+    float:left;
+    bottom: -700px;
+    left:0;
+    width: 100%; 
+    background-color: #ccc9c9;
+    height: 95px;
+    overflow: auto;
+}
+
+.bottom-list {
+    display: inherit;
+    position: absolute;
+}
+
+.bottom-list > ul{
+    padding: 15px;
+    list-style: none;
+    font-weight: 600;
+    font-size :smaller;
+    color: black;
+    font-family: "Noto Sans KR" , sans-serif;
+}
+
+.bottom-list > ul > li {
+    border : 0;
+    float: left;
+    border-right: 2px solid black;
+}
+
+.bottom-list > ul > li:last-child{
+    border: none;
+}
+
+.site-info{
+    display: inherit;
+    position: relative;
+    top : 46px;
+    left: 20px;
+    font-weight: 400;
+    font-size :x-small;
+    color: black;
+    font-family: "Noto Sans KR" , sans-serif;
+}
+
+.site-warning{
+    display: inherit;
+    position: relative;
+    top : 50px;
+    left: 20px;
+    font-weight: 400;
+    font-size :x-small;
+    color: black;
+    font-family: "Noto Sans KR" , sans-serif;
+}

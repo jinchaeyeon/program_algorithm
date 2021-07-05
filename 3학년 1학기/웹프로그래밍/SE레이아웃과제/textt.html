@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>컴퓨터소프트웨어공학과 | 학과소개</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        .float-div1 {
+            position: absolute;
+			margin-top: 2%;
+            width: 1900px;
+            height: 100px;
+            background:rgb(248, 121, 75);
+        }
+        .float-div2 {
+            position: absolute;
+            top: 330px;
+            padding: 5px;
+            width: 1910px;
+            height: 30px;
+            background: rgb(44, 44, 44);
+            color: rgb(165, 165, 165);
+            font-weight: bold;
+            line-height: 30px;
+        }
+        .float-img {
+            position: absolute;
+            top: 25px;
+            left: 25px;
+        }
+        .nav-btn {
+            position: relative;
+            display: inline-block;
+            border: 1px solid white;
+            padding: 15px;
+            color: white;
+            font-size: medium;
+            text-align: center;
+        }
+        .nav-btn:hover {
+            color: yellow;
+        }
+        .nav-btn .nav-btn:hover div > div:hover > a {
+            color: yellow;
+        }
+        .left-round {
+            border-top-left-radius: 15%;
+            border-bottom-left-radius: 15%;
+        }
+        .right-round {
+            border-top-right-radius: 15%;
+            border-bottom-right-radius: 15%;
+        }
+        .context-box {
+            min-width: 200px; 
+            max-width: 1100px; 
+            height: auto;
+            margin: 0 auto;
+        }
+        .context-box::after {
+            content: "";
+            display: block;
+            clear: both;
+        }
+        tr > td {
+            text-align: center;
+            border: 1px solid grey;
+            height: 35px;
+        }
+        td:hover {
+            background:rgb(248, 121, 75);
+            color: white;
+            box-shadow: 5px 5px 5px black;
+        }
+        p {
+            max-width: 700px;
+        }
+        .foot-bar-ul {
+            padding: 10px;
+            list-style: none;
+        }
+        .foot-bar-li {
+            padding-right: 10px;
+            padding-left: 10px;
+            float: left;
+            border-right: 1px solid black;
+        }
+        .foot-bar-ul > .foot-bar-li:last-child {
+            padding-right: 10px;
+            padding-left: 10px;
+            float: left;
+            border-right: 0px;
+        }
+        .foot-bar-li::after {
+            content: "";
+            display: block;
+            clear: both;
+        }
+        #department {
+            font-weight: bold;
+            color: white;
+            position: absolute;
+            top: 30px;
+            left: 205px;
+        }
+
+        a {
+            color: white;
+            text-decoration: none;
+        }
+        .nav {
+            text-align: center;
+        }
+        .nav ul {
+            background-color:rgb(248, 121, 75);
+        }
+        .nav > ul{
+            display:inline-block;
+            padding:0 10px;            
+        }
+        .nav > ul > li {
+            display:inline-block;
+            border: 1px solid white;
+        }
+        .nav > ul > li:first-child {
+            border-top-left-radius: 15%;
+            border-bottom-left-radius: 15%;
+        }
+        .nav > ul > li:last-child {
+            border-top-right-radius: 15%;
+            border-bottom-right-radius: 15%;
+        }        
+        .nav ul > li > a {
+            display:block;
+            padding:10px;            
+        }
+        .nav ul > li:hover > a {
+            color:yellow;
+        }
+        .nav ul > li:hover > ul{
+            list-style: none;
+            background: teal;
+            display:block;
+        }
+        .nav ul > li:hover > ul > li:hover > a {
+            color: red;
+        }
+        .nav ul > li{
+            position: relative;
+        }
+        .nav > ul ul{
+            display: none;
+            position:absolute;
+            top: 100%;
+            left:0;
+        }
+    </style>
+</head>
+<body>
+    <div style="height: 370px;">
+        <img style="position: absolute; z-index: -1;" src="top.jpg">
+        <div class="float-div1">
+            <img class="float-img" src="logo.png" width="170px">
+            <span id="department">컴퓨터소프트웨어공학과</span>
+			<div class="nav" style="position: absolute; width: 500px; top: 30px; left: 1150px;">
+				<ul>
+					<li>
+						<a href="">학과소개</a>
+						<ul>
+							<li><a href="#">학과소개</a></li>
+							<li><a href="#">교육목표</a></li>
+							<li><a href="#">주요성과</a></li>
+							<li><a href="#">졸업 후 진로</a></li>
+						</ul>
+					</li>
+					<li>
+						<a href="">교육목표</a>
+					</li>
+					<li>
+						<a href="">주요성과</a>
+					</li>
+					<li>
+						<a href="">졸업 후 진로</a>
+					</li>
+				</ul>
+			</div>
+        </div>
+        <!-- <div style="position: absolute; width: 500px; top: 30px; left: 1150px;">
+            <div class="nav-btn left-round"><A href="#" style="text-decoration: none; color: white;">학과소개</A></div>
+            <div class="nav-btn">교육목표</div>
+            <div class="nav-btn">주요성과</div>
+            <div class="nav-btn right-round">졸업 후 진로</div>
+        </div> -->
+        <div class="float-div2">학과소개</div>
+    </div>
+    <div class="context-box">
+        <div style="float: left;">
+            <table style="width: 300px; margin-left: 30px;">
+                <thead>
+                    <th style="font-weight: bold; font-size: x-large; border: 1px solid grey; height: 60px; text-align: center; line-height: 30px;">
+                        학과소개
+                    </th>
+                </thead>
+                <tbody>
+                    <tr><td>학과소개</td></tr>
+                    <tr><td>교육목표</td></tr>
+                    <tr><td>주요성과</td></tr>
+                    <tr><td>졸업 후 진로</td></tr>
+                </tbody>
+            </table>
+        </div>
+        <div style="margin-left: 340px;">
+            <p style="margin-top: 0px; font-size: xx-large"><span style="color: rgb(42, 195, 255); font-weight: bold;">실천적인</span>프로그래머 양성</p>
+            <p style="margin-top: 30px; font-size: large;">소프트웨어 개발에 참여할 실천적인 프로그래머를 양성하는 것을 교육의 목표로 하여 국제적 경쟁력을 갖춘 멀티플레이어 엔지니어 양성에 노력하고 있습니다.</p>
+            <img src="bul.png" width="20" style=" margin-top: 20px;">
+            <span style="font-size: x-large;">학과소개</span>
+            <p style="margin-top: 10px; margin-bottom: 30px; color: grey;">
+                컴퓨터소프트웨어공학과에서는 소프트웨어 개발에 참여할 실천적인 프로그래머 양성을 기본 목표로 한다. 다양한 프로그래밍 언어 사용 능력을 배양하고 소프트웨어 설계에
+                필요한 기초 이론 및 응용 기술을 습득한다. 또한 리눅스, 윈도우, 인터넷, 스마트 폰 등의 다양한 플랫폼에서 사용되는 시스템을 실제로 개발하는 과정을 거침으로써, 소프트웨어 산업에 있어 필수적인 고급인력을 양성하고 있다.
+                그리고 2006년도부터 교육품질향상 및 우수진재를 양성하기 위해 공학교육인증(ABEEK)인 "소프트웨어공학 프로그램"을 운영하고 있다.
+            </p>
+        </div>
+    </div>
+    <div style="width:1920px; height: 80px; background:rgb(214, 214, 214);">
+        <ul class="foot-bar-ul">
+            <li class="foot-bar-li">금오신문고</li>
+            <li class="foot-bar-li">교육행정서비스현장</li>
+            <li class="foot-bar-li">이메일무단수집거부</li>
+            <li class="foot-bar-li">전화번호안내</li>
+            <li class="foot-bar-li">오시는길</li>
+            <li class="foot-bar-li">대학자체평가</li>
+            <li class="foot-bar-li">개인정보처리방침</li>
+        </ul>
+        <p style="margin-top: 20px; margin-left: 20px; font-size: small;">[39177] 경북 구미시 대학로 61 컴퓨터소프트웨어공확과 TEL : (054) 478-7540 FAX : (054) 478-7319</p>
+        <p style="margin-left: 20px; font-size: small;">Copyright (c) 2019 Kumoh National Institute of Technology. All Rights Reserved.</p>
+    </div>
+</body>
+</html>

@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <link href="accordion.css" rel="stylesheet">
+    <link href="carousel.css" rel="stylesheet">
+    <link href="sidebar.css" rel="stylesheet">
+    <style>
+        .plusBtn {
+            width: 20px;
+        }
+        .minuxBtn {
+            width: 20px;
+        }
+        .delBtn {
+            width: 20px;
+        }
+    </style>
+    <title>Document</title>
+</head>
+<body>
+<div id="mySidenav" class="sidenav">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <a href="#">음식</a>
+    <a href="#">가전</a>
+    <a href="#">가구</a>
+    <a href="#">캠핑용품</a>
+</div>
+    
+<span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; open</span>
+    
+<script>
+    function openNav() {
+        document.getElementById("mySidenav").style.width = "250px";
+    }
+        
+    function closeNav() {
+        document.getElementById("mySidenav").style.width = "0";
+    }
+</script>
+
+<form action="">
+
+    <div style="width: 700px; background-color: rgb(194, 194, 194); position: absolute; margin-left: 500px;">
+        <fieldset style="padding: 0;">
+            <legend>상숨 상세 구매</legend>
+            알프랑 그늘막 팝업 스피드 원턴치 텐트
+
+            <button class="accordion">판매자 정보</button>
+            <div class="panel">
+            <p>금오공과대학교<br>소프트웨어공학과<br>김텐트
+            </p>
+            </div>
+
+            <button class="accordion">상품 정보</button>
+            <div class="panel">
+            <p>최신 텐트<br>원터치<br>방수</p>
+            </div>
+
+            <button class="accordion">주문 정보</button>
+            <div class="panel">
+            <select id="item" onChange="changeItemSelect()">
+                <option value="">선택</option>
+                <option value="A">A.스피드 원터치 팝업텐트(3~4인용)</option>
+                <option value="B">B.5초 원터치 텐트(3인용) (+10,000원)</option>
+                <option value="C">C.5초 원터치 텐트(5인용) (+20,000원)</option>
+            </select>
+            <ul id="ul_items" style="list-style: none; padding: 0; margin: 0;">
+            </ul>
+            </div>
+
+            <script>
+                var array = [];
+                var childArray = [];
+                var z = 0;
+
+                function changeItemSelect() {
+                    var itemList = document.getElementById("item");
+
+                    var item = {
+                        value : itemList.options[itemList.selectedIndex].value,
+                        text : itemList.options[itemList.selectedIndex].text,
+                        amount : 1,
+                        addAmount () {
+                            this.amount++;
+                        },
+                        subAmount () {
+                            if(this.amount > 1) {
+                                this.amount--;
+                            }
+                        }
+                    };
+
+
+                    array.push(item);
+
+                    var selectedItem = itemList.options[itemList.selectedIndex].text;
+                    $("#ul_items").append("<li style=\"padding: 0; border: solid 1px; display: inline-block;\">"
+                        + selectedItem
+                        + "<input style=\"width: 50px;\" type=\"text\" value=" + item.amount + ">"
+                        + "<button class=\"plusButton\" >+</button>"
+                        + "<button class=\"minusButton\">-</button>"
+                        + "<button class=\"delButton\">X</button>"
+                        + "<label info=\""+ z +"\" style=\"margin-left: 50px;\">0원</label>"
+                        + "</li>"
+                    );
+
+                    document.getElementsByTagName("li")[array.length-1].value = z++;
+
+                    onModify();
+
+                    $(".plusButton").unbind("click");
+                    $(".minusButton").unbind("click");
+                    $(".delButton").unbind("click");
+
+                    $(".plusButton").click(function (e) {
+                        e.preventDefault();
+
+                        var li = this.parentElement;
+                        childArray = li.childNodes;
+
+                        array[li.value].addAmount();
+                        childArray[1].value = array[li.value].amount;
+
+                        onModify();
+                    });
+
+                    $(".minusButton").click(function (e) {
+                        e.preventDefault();
+
+                        var li = this.parentElement;
+                        childArray = li.childNodes;
+
+                        array[li.value].subAmount();
+                        childArray[1].value = array[li.value].amount;
+
+                        onModify();
+                    });
+
+                    $(".delButton").click(function (e) {
+                        e.preventDefault();
+
+                        var li = this.parentElement;
+                        li.style.display = "none";
+
+                        var select = document.getElementsByTagName("select");
+                        select[0].selectedIndex = 0;
+
+                        onModify();
+                    });
+                }
+
+                function onModify () {
+                    var li = document.getElementsByTagName('li');
+
+                    var i;
+                    var sum = 0;
+                    var total = 0;
+                    for(i=0; i<li.length; i++) {
+                        if(li[i].style.display != "none") {
+                            var amount = array[li[i].value].amount;
+
+                            var cash;
+                            if(array[li[i].value].value == 'A') {
+                                cash = 39800;
+                            } else if(array[li[i].value].value == 'B') {
+                                cash = 49800;
+                            } else {
+                                cash = 59800;
+                            }
+
+                            sum = cash*amount;
+
+                            li[i].lastChild.innerHTML = sum + "원";
+
+                            total += sum;
+                        }
+                    }
+
+                    document.getElementById('total').innerHTML = "총 상품금액 " + total + "원";
+                }
+            </script>
+
+            <script>
+                var acc = document.getElementsByClassName("accordion");
+                var i;
+
+                for (i = 0; i < acc.length; i++) {
+                acc[i].addEventListener("click", function(e) {
+                    e.preventDefault();
+
+                    this.classList.toggle("active");
+
+                    var pans = document.getElementsByClassName("panel");
+                    for(j=0; j < pans.length; j++) {
+                        pans[j].style.display = "none";
+                    }
+
+                    var panel = this.nextElementSibling;
+                    if (panel.style.display === "block") {
+                    panel.style.display = "none";
+                    } else {
+                    panel.style.display = "block";
+                    }
+                });
+                }
+            </script>
+
+            <div style="text-align: right; padding: 0; margin: 0;"><label id="total" style="font-weight: bold; margin: 0;">총 상품금액 0원</label></div>
+            <input type="submit" value="구매하기">
+        </fieldset>
+    </div>
+
+</form>
+
+
+
+
+<div class="slideshow-container">
+
+<div class="mySlides fade">
+    <div class="numbertext">1 / 3</div>
+    <img src="img/1.jpg" style="width:500px; height: 500px;">
+</div>
+
+<div class="mySlides fade">
+    <div class="numbertext">2 / 3</div>
+    <img src="img/2.jpg" style="width:500px; height: 500px;">
+</div>
+
+<div class="mySlides fade">
+    <div class="numbertext">3 / 3</div>
+    <img src="img/3.jpg" style="width:500px; height: 500px;">
+</div>
+
+<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+<a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+</div>
+<br>
+
+<div style="margin-left: 200px;">
+    <span class="dot" onclick="currentSlide(1)"></span> 
+    <span class="dot" onclick="currentSlide(2)"></span> 
+    <span class="dot" onclick="currentSlide(3)"></span> 
+</div>
+
+<script>
+    var slideIndex = 1;
+    showSlides(slideIndex);
+
+    function plusSlides(n) {
+        showSlides(slideIndex += n);
+    }
+
+    function currentSlide(n) {
+        showSlides(slideIndex = n);
+    }
+
+    function showSlides(n) {
+        var i;
+        var slides = document.getElementsByClassName("mySlides");
+        var dots = document.getElementsByClassName("dot");
+        if (n > slides.length) {slideIndex = 1}    
+        if (n < 1) {slideIndex = slides.length}
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";  
+        }
+        for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
+        }
+        slides[slideIndex-1].style.display = "block";  
+        dots[slideIndex-1].className += " active";
+    }
+</script>
+
+
+    
+</body>
+</html>

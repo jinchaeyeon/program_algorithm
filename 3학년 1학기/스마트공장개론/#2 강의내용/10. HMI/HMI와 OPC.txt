@@ -1,0 +1,78 @@
+설비온라인화2
+
+HMI
+설비 온라인화 프로토콜
+RTDB
+
+HMI/MMI 의미를 설명할 수 있다.
+설비 온라인화 프로토콜의 종류별 주요 특징을 설명할 수 있다.
+RTDB의 정의를 이해하고 RDBMS와의 차이점을 설명할 수 있다.
+
+
+
+HMI : Human Machine Interface
+MMI : Man Machine Interface
+OPC : OLE for Process Control
+SEMI : Semiconductor Equipment and Materials Internationa
+SECS : SEMI Equipment Communications Standard
+HSMS : High Speed SECS Message Service
+GEM : Generic Equipment Model
+SEM : Special Equipment Model
+RTDB : Real-Time Data Base
+RDBMS : Relational Data Base Management System
+
+
+HMI
+공정/설비로부터 수집된 실시간 데이터를 그래픽 화면을 통해서 실시간으로 보여줌으로써 공정/설비의 운전 상황과 이상상태를 작업자가 용이하게 파악하고 운전할 수 있도록 지원
+역속산업, 전력, 환경, 수처리 등에 쓰임, 공정내의 단독 설비의 모니터링이나 제어에도 활용
+In-Touch, RS-View 등의 상용 제품이 있음
+백업 기능, 현장 정보 interface 기능도 톡톡히 함
+
+
+주요기능
+1 공정/설비 모니터링
+-기계설비의 가동상황 모니터링
+-컴퓨터기기의 모니터링
+-통신 네트워크 모니터링
+2 이더넷을 이용한 다양한 솔루션 제공
+-손쉽게 일반 PC에 접속할 수 있으면서도, 많은 데이터 전송이 가능해짐
+-연결이 간단함
+-정보 수집이 비교적 간단하게 구현 가능, 정보 수집 뿐만 아니라 HMI자체의 프로그래밍 유지와 보수가 편해짐
+-이더넷 이외에서 USB, CF카드를 지원하는 추세
+-HMI기기의 모니터일 뿐만 아니라, 제어도 가능
+
+
+HMI 도입 효과
+각장 정보의 실시간 취득 및 제공으로 관리 효율 향상
+불가동 상황 등의 현장상황 실시간 전달로 생산성 향상
+불량, 오재료 등 각종 경보 제공으로 품질 향상
+설비를 제어하는 MMI와 POP장비를 통합 함으로서 작업자 I/F를 간소화
+설비 도입시부터 상위시스템과의 I/F를 고려, POP기능을 추가 함으로서 POP장비 별도설치 불필요
+각종 품질, 실적 정보를 설비로부터 직접적으로 취득을 함으로써 정보 정확도 향상
+각종 제어/Trend 성의 데이터를 상위 시스템으로 보고 함으로써 Lot 추적 용이
+사무실 어떠한 장소에서도 설비 모니터링 가능
+설비 자동 세팅을 통한 품질 균일화 및 생산성 향상
+
+
+설비 Online화에 필요한 프로토콜의 필요성
+MES 등 제조분야에서의 통합 시스템 발전으로 하위 시스템과의 실시간 연계 대두
+각종 산업용 통신기술의 난립으로 Interface가 시스템화의 장애로 변질
+수많은 응용 프로그램마다 하위 장치들의 통신 Driver가 별도로 필요
+=상위 각각의 응용 프로그램에 대한 통신 드라이버 필요
+->표준 프로토콜의 필요성이 대두됨(OPC, SEMI)
+
+
+OPC
+공정을 제어하는 다양한 장비들간의 통신을 위한 국제 산업 표준
+MS의 협조 아래 표준을 제정
+생산현장에서 경영정보 시스템 영역까지의 data 연결성 및 상호호환성을 확보
+
+각각의 디바이스들과 고유의 프로토콜을 이용해서 interface할 수 있는 중앙 OPC 서버를 이용해 복잡함을 줄임
+
+
+OPC의 장점
+개방성 : Real Time Data 를 쉽게 취득, PLC/DCS 업체에 종속되지 않음
+생산성 : Interface 경비 절감, 시스템 통합이 용이
+호환성 : 모든 OPC Client(HMI, RTDB, SCADA, MES) 등은 모든 OPC Server등과 Plug&Play방식으로 연결
+
+
